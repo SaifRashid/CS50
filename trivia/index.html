@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('#tiktok').addEventListener('click', function () {
+                    document.querySelector('#tiktok').style.backgroundColor = 'red';
+                    document.querySelector('#result').innerHTML = "Incorrect";
+                });
+                document.querySelector('#snapchat').addEventListener('click', function () {
+                    document.querySelector('#snapchat').style.backgroundColor = 'red';
+                    document.querySelector('#result').innerHTML = "Incorrect";
+                });
+                document.querySelector('#instagram').addEventListener('click', function () {
+                    document.querySelector('#instagram').style.backgroundColor = 'green';
+                    document.querySelector('#result').innerHTML = "Correct!";
+                });
+                let input = document.querySelector('input');
+                document.querySelector('#submit').addEventListener('click', function(){
+                    if (input.value.localeCompare('One Piece', 'en', { sensitivity: 'accent' }) == 0)
+                    {
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#result2').innerHTML = "Correct!"
+                    }
+                    else
+                    {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#result2').innerHTML = "Incorrect"
+                    }
+                });
+
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which app has the most total users?</h3>
+                <button id="tiktok">TikTok</button>
+                <button id="snapchat">Snapchat</button>
+                <button id="instagram">Instagram</button>
+                <br>
+                <div id="result"></div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the best anime?</h3>
+                <input type="text" autocomplete="off">
+                <button id="submit">Submit</button>
+                <br>
+                <div id="result2"></div>
+            </div>
+        </div>
+    </body>
+</html>

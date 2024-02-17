@@ -1,0 +1,18 @@
+#title {
+    color:white;
+	font-size:50px;
+	text-align:center;
+}
+
+header {
+	background-color:#328cfa;
+	padding:10px;
+}
+
+body {
+    background-color:#111111;
+}
+#wrapper {
+    margin-left:10%;
+    color:white;
+}

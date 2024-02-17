@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h2>Cash: {{ usd(cash) }}</h2>
+    <h2>Grand Total: {{ usd(grand_total) }}</h2>
+
+    <table class = "table">
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Current Price</th>
+            <th>Total Value</th>
+        </tr>
+        {% for i in portfolio %}
+            <tr>
+                <td>{{ i }}</td>
+                <td>{{ portfolio[i] }}</td>
+                <td>{{ usd(lookup(i).price) }}</td>
+                <td>{{ usd(lookup(i).price * portfolio[i]) }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

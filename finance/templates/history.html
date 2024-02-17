@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <tr>
+            <th>Type</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Shares</th>
+            <th>Total Price</th>
+            <th>Time</th>
+        </tr>
+        {% for h in history %}
+            <tr>
+                <td>{{ h.type.capitalize() }}</td>
+                <td>{{ h.symbol }}</td>
+                <td>{{ usd(h.price) }}</td>
+                <td>{{ h.number_of_shares }}</td>
+                <td>{{ usd(h.number_of_shares * h.price) }}</td>
+                <td>{{ h.time }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
